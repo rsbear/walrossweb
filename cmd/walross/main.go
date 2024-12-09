@@ -79,7 +79,7 @@ func (s *Server) handleLandingRoute(c echo.Context) error {
 
 func (s *Server) Start() error {
 	s.setupRoutes()
-	addr := fmt.Sprintf("%s:%d", "localhost", 8080)
+	addr := fmt.Sprintf("%s:%d", "0.0.0.0", 8080)
 	log.Debug("server starting", "addr", addr)
 	return s.echo.Start(addr)
 }
