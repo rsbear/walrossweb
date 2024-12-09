@@ -3,7 +3,7 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pkgs/**/*.{html,js,go}"],
+  content: ["./**/*.{html,js,go}"],
   theme: {
     extend: {
       colors: {

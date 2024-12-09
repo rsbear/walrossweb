@@ -11,7 +11,6 @@ import (
 
 	"github.com/charmbracelet/log"
 	"github.com/chasefleming/elem-go"
-	"github.com/chasefleming/elem-go/attrs"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -74,14 +73,8 @@ func (s *Server) setupRoutes() {
 }
 
 func (s *Server) handleLandingRoute(c echo.Context) error {
-	page := web.BaseTemplate(LandingRoute())
+	page := web.BaseTemplate(web.LandingRoute())
 	return s.HTML(c, page)
-}
-
-func LandingRoute() elem.Node {
-	return elem.Div(attrs.Props{attrs.Class: "text-center"},
-		elem.H1(attrs.Props{attrs.Class: "text-4xl"}, elem.Text("Walross")),
-	)
 }
 
 func (s *Server) Start() error {

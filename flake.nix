@@ -30,7 +30,7 @@
             ( tailwindcss --input input.css --output cmd/walross/static/styles.css --watch ) & \
             wait
           '';
-          hotReload = false;
+          hotReload = true;
           extraPackages = with pkgs; [
             nixpkgs-fmt
             tailwindcss
