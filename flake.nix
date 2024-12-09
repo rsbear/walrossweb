@@ -19,7 +19,7 @@
         system,
         ...
       }: let
-        name = "walrossweb";
+        name = "walross";
         version = "latest";
         vendorHash = null; # update whenever go.mod changes
         mkGoDevShell = inputs.devshells.lib.${system}.mkGoDevShell;
@@ -43,7 +43,7 @@
           src = ./.;
           vendorHash = null;
           subPackages = ["cmd/walross"];
-          buildFlags = ["-mod=mod"];
+          # buildFlags = ["-mod=mod"];
           # proxyVendor = true;
           # # Set GOPROXY
           # preBuild = ''
