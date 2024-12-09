@@ -1,5 +1,5 @@
-vendor
-.go
+# vendor
+# .go
 node_modules
 .DS_Store
 .env

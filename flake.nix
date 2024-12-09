@@ -35,12 +35,20 @@
             nixpkgs-fmt
             tailwindcss
           ];
+          env = {};
         };
 
         packages.default = pkgs.buildGoModule {
-          inherit name vendorHash;
+          inherit name;
           src = ./.;
+          vendorHash = null;
           subPackages = ["cmd/walross"];
+          buildFlags = ["-mod=mod"];
+          # proxyVendor = true;
+          # # Set GOPROXY
+          # preBuild = ''
+          #   export GOPROXY=https://proxy.golang.org,direct
+          # '';
         };
       };
     };
