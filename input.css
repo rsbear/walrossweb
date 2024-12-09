@@ -1,0 +1,276 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply px-2 bg-teal-600 text-neutral-200 hover:bg-teal-500
+    hover:text-neutral-100 focus:outline-none focus:ring-0 active:bg-neutral-700
+    active:text-neutral-100 uppercase;
+}
+
+.inpt {
+  @apply bg-transparent text-neutral-200;
+}
+
+.rose-pine {
+  --bgcolor: 31, 29, 46;
+  --lively: 235, 111, 146;
+  --lovely: 49, 116, 143;
+  --maintext: 224, 222, 244;
+  --subtext: 144, 140, 170;
+  --hinttext: 110, 106, 134;
+  --err: 255 0 0;
+}
+
+.rose-pine-dawn {
+  --bgcolor: 255, 250, 243;
+  --lively: 234, 157, 52;
+  --lovely: 40, 105, 131;
+  --maintext: 87, 82, 121;
+  --subtext: 121, 117, 147;
+  --hinttext: 152, 147, 165;
+  --err: 255 0 0;
+}
+
+.nord {
+  --bgcolor: 46, 52, 64;
+  --lively: 130, 170, 220;
+  --lovely: 136, 192, 208;
+  --maintext: 229, 235, 241;
+  --subtext: 236, 239, 244;
+  --hinttext: 143, 188, 187;
+  --err: 255 0 0;
+}
+
+
+/* Container */
+.prose {
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Headings */
+.prose h1 {
+  color: rgba(var(--maintext));
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  line-height: 1.1111111;
+}
+
+.prose h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+
+.prose h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+}
+
+.prose h4 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+/* Links */
+.prose a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.prose a:hover {
+
+}
+
+/* Lists */
+.prose ul {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+
+.prose ul > li {
+  position: relative;
+  padding-left: 1.75em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose ul > li::before {
+  content: "";
+  position: absolute;
+  background-color: #D1D5DB;
+  border-radius: 50%;
+  width: 0.375em;
+  height: 0.375em;
+  top: calc(0.875em - 0.1875em);
+  left: 0.25em;
+}
+
+.prose ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+  counter-reset: list-counter;
+}
+
+.prose ol > li {
+  position: relative;
+  padding-left: 1.75em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  counter-increment: list-counter;
+}
+
+.prose ol > li::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  font-weight: 400;
+  color: #6B7280;
+  left: 0;
+}
+
+/* Paragraphs */
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* Blockquotes */
+.prose blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: #111827;
+  border-left-width: 0.25rem;
+  border-left-color: #E5E7EB;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1em;
+}
+
+/* Code blocks */
+.prose code {
+  font-weight: 600;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background-color: #1F2937;
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+  border-radius: 0.375rem;
+  padding: 0.8571429em 1.1428571em;
+}
+
+.prose pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: 400;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+}
+
+.prose thead {
+  font-weight: 600;
+  border-bottom-width: 1px;
+  border-bottom-color: #D1D5DB;
+}
+
+.prose thead th {
+  vertical-align: bottom;
+  padding-right: 0.5714286em;
+  padding-bottom: 0.5714286em;
+  padding-left: 0.5714286em;
+}
+
+.prose tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: #E5E7EB;
+}
+
+.prose tbody td {
+  vertical-align: top;
+  padding: 0.5714286em;
+}
+
+/* Images */
+.prose img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose figure {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose figure > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose figcaption {
+  font-size: 0.875em;
+  line-height: 1.4285714;
+  margin-top: 0.8571429em;
+}
+
+/* Horizontal rules */
+.prose hr {
+  border-color: #E5E7EB;
+  border-top-width: 1px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+/* Strong */
+.prose strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* General spacing */
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+ /* disable details arrow icon */
+details > summary {
+  list-style: none;
+}
+details > summary::marker {
+  display: none;
+}

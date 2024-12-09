@@ -25,17 +25,22 @@
         mkGoDevShell = inputs.devshells.lib.${system}.mkGoDevShell;
       in {
         devShells.default = mkGoDevShell {
-          cmd = "cd cmd/peanuts && go run main.go";
+          cmd = ''
+            ( cd cmd/walross && go run main.go ) & \
+            ( tailwindcss --input input.css --output cmd/walross/static/styles.css --watch ) & \
+            wait
+          '';
           hotReload = false;
           extraPackages = with pkgs; [
             nixpkgs-fmt
+            tailwindcss
           ];
         };
 
         packages.default = pkgs.buildGoModule {
           inherit name vendorHash;
           src = ./.;
-          subPackages = ["cmd/${name}"];
+          subPackages = ["cmd/walross"];
         };
       };
     };
